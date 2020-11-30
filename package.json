@@ -7,7 +7,10 @@
     "ddns": "./bin/run"
   },
   "bugs": "https://github.com/ivanklee86/ddns/issues",
-  "dependencies": {},
+  "dependencies": {
+    "cli-ux": "^5.5.0",
+    "public-ip": "^4.0.2"
+  },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@oclif/test": "^1.2.7",
@@ -22,7 +25,8 @@
     "mocha": "^5.2.0",
     "nyc": "^14.1.1",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "sinon": "^9.2.1"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -49,7 +53,7 @@
   "repository": "ivanklee86/ddns",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "posttest": "eslint . --ext .ts --config .eslintrc --fix",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
